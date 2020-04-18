@@ -1,0 +1,121 @@
+type userinfo @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]){
+  id:ID!
+  identityid: String
+  username: String
+  cusername:String
+  userbio: String
+  userpic: String
+  ausername: String
+  causername: String
+  auserbio:String
+  auserpic:String
+  firstname: String
+  lastname: String
+  incollege: String
+  collegename: String
+  major: String
+  race: String
+  gender: String
+  birthday: String
+  country: String
+  utype: String
+  orgname:String
+}
+
+type userpic @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id:ID!
+  identityid: String
+  userpic: String 
+  auserpic:String
+}
+
+type event @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id:ID!
+  eid:String
+  ename: String
+  cename:String
+  etime: String
+  elocation: String
+  edetails: String
+  identityid: String!
+  epicpath: String
+  anonymous: String
+  eida:String
+}
+
+type eventlike @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id: ID!
+  eid:String
+  identityid: String
+  anonymous:String
+  likes:String
+}
+
+type eventcomment @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id: ID!
+  eid:String
+  identityid: String
+  anonymous:String
+  ecomment:String
+}
+
+type follow @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id:ID!
+  followerid: String!
+  followera: String
+  followingid: String! 
+  followinga: String
+}
+
+type profileratings @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id:ID!
+  raterid: String!
+  ratera:String
+  ratedid: String!
+  rateda: String
+  smash:String
+  heat: String
+  looseness:String
+  thickness:String
+  intelligence:String
+  savageness:String
+  ratchetness:String
+  diversity:String
+}
+
+type blog @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id:ID!
+  bid:String
+  identityid: String
+  anonymous:String
+  bname:String
+  cbname:String
+  bdetails:String
+  bida:String
+}
+
+type blogcomment @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id:ID!
+  bid:String
+  identityid: String
+  anonymous:String
+  bcomment:String
+}
+
+type bloglike @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id: ID!
+  bid:String
+  identityid: String
+  anonymous:String
+  likes:String
+}
+
+type profilecomment @model @auth( rules: [ {allow: owner, ownerField: "owner", operations: [create, update, delete]} ]) {
+  id: ID!
+  cid: String
+  pidentityid:String
+  panonymous:String
+  identityid: String
+  anonymous:String
+  ccomment: String
+}
